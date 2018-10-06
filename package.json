@@ -1,0 +1,17 @@
+{
+  "name": "test_heroku",
+  "version": "1.0.0",
+  "description": "test rails API and React on heroku",
+  "repository": "https://github.com/costerik/test_heroku.git",
+  "author": "Erik Ahumada <costerik@hotmail.com>",
+  "license": "MIT",
+  "engines":{
+    "node": "10.8.0",
+    "yarn": "1.9.4"
+  },
+  "scripts":{
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "yarn build && yarn deploy"
+  } 
+}
